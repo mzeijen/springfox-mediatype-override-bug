@@ -11,8 +11,8 @@ Demo and bug explanation
  - Open the browser to: http://localhost:8080/swagger-ui.html
  - Open 'docket-level-consumes-produces-resource'
  - Open PUT /docket-level/consumes
- - Notice that under 'data' the 'Parameter content type:' selectbox contains `application/xml`, `application/octet-stream` and `application/json`. 
- - See the method `DocketLevelConsumesProducesResource.produces` and notice that the @GetMapping produces field only contains `application/octet-stream`.
+ - Notice that under 'data' the 'Parameter content type:' selectbox contains `application/xml`, `application/json` and `text/plain`. 
+ - See the method `DocketLevelConsumesProducesResource.produces` and notice that the @GetMapping produces field only contains `text/plain`.
  - See the `Application.docketLevelConsumesProducesApi` method and see that we define 'produces' and 'consumes' on the docket level. These contain the 
    `application/json` and `application/xml` mediatypes.
    What happens is that these two media-types are merged with the resource level media-type from the `DocketLevelConsumesProducesResource.produces` method.

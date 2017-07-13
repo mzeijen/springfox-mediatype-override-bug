@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/docket-level")
 class DocketLevelConsumesProducesResource {
 
-    @GetMapping(path = "produces", produces="application/octet-stream")
+    @GetMapping(path = "produces", produces="text/plain")
     @ApiOperation(value="Its produces media-types aren't as expected...")
-    public byte[] produces() {
-        return new byte[0];
+    public String produces() {
+        return "Hello Springfox :D";
     }
 
-    @PutMapping(path = "consumes", consumes="application/octet-stream")
+    @PutMapping(path = "consumes", consumes="text/plain")
     @ApiOperation(value="Its consumes media-types aren't as expected...")
-    public void consumes(@RequestBody byte[] data) {
+    public void consumes(@RequestBody String data) {
     }
 }

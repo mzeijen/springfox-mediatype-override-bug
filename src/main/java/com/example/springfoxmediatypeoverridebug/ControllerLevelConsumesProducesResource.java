@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/controller-level", consumes = {"application/json", "application/xml"}, produces = {"application/json", "application/xml"})
 class ControllerLevelConsumesProducesResource {
 
-    @GetMapping(path = "produces", produces="application/octet-stream")
+    @GetMapping(path = "produces", produces="text/plain")
     @ApiOperation(value="Its 'produces' media-types is as expected...")
-    public byte[] produces() {
-        return new byte[0];
+    public String produces() {
+        return "Hello SpringFox :D";
     }
 
-    @PutMapping(path = "consumes", consumes="application/octet-stream")
+    @PutMapping(path = "consumes", consumes="text/plain")
     @ApiOperation(value="Its 'consumes' media-types is as expected...")
-    public void consumes(@RequestBody byte[] data) {
+    public void consumes(@RequestBody String data) {
     }
 
 }
