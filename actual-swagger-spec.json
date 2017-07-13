@@ -1,0 +1,80 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Api Documentation",
+    "version": "1.0",
+    "title": "Api Documentation",
+    "termsOfService": "urn:tos",
+    "contact": {},
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "docket-level-consumes-produces-resource",
+      "description": "Docket Level Consumes Produces Resource"
+    }
+  ],
+  "consumes": [
+    "application/xml",
+    "application/json"
+  ],
+  "produces": [
+    "application/xml",
+    "application/json"
+  ],
+  "paths": {
+    "/docket-level/consumes": {
+      "put": {
+        "tags": [
+          "docket-level-consumes-produces-resource"
+        ],
+        "summary": "Its consumes media-types aren't as expected...",
+        "operationId": "consumesUsingPUT",
+        "consumes": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "data",
+            "description": "data",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/docket-level/produces": {
+      "get": {
+        "tags": [
+          "docket-level-consumes-produces-resource"
+        ],
+        "summary": "Its produces media-types aren't as expected...",
+        "operationId": "producesUsingGET",
+        "produces": [
+          "text/plain"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
